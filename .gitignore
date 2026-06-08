@@ -1,0 +1,19 @@
+
+
+# 로그 파일 제외
+logs/
+*.log
+
+
+# 빌드 결과물 제외
+/build/
+*.o
+*.class
+
+# 가상 환경
+venv/
+env/
+.venv/
+
+.env/
+.pdf/
