@@ -297,7 +297,6 @@ with col2:
                         "clause": clause,
                         "result": {
                             "status": "오류",
-                            "score": 0,
                             "reason": str(e),
                             "law": "N/A",
                             "precedent": "N/A",
@@ -376,7 +375,7 @@ with col2:
                         margin-bottom:15px;
                     ">
                     <h4 style="margin:0; color:{text_color};">
-                        진단 상태: {status} (위험도 점수: {result.get('score', 0)}%)
+                        진단 상태: {status}
                     </h4>
                     </div>
                     """,

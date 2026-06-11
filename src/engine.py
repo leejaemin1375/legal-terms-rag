@@ -41,8 +41,7 @@ class LawAnalysisEngine:
         
         반드시 다음 JSON 형식으로 답변하세요:
         {{
-            "status": "위험/주의/안전",
-            "score": 0~100점,
+            "status": "위험/안전",
             "reason": "상세 이유(제공된 근거에 기반하여 기술)",
             "law": "관련 법 조항(Context에 없는 경우 N/A)",
             "precedent": "참조 판례(Context에 없는 경우 반드시 N/A)",
@@ -73,7 +72,6 @@ class LawAnalysisEngine:
         except Exception as e:
             return {
                 "status": "오류",
-                "score": 0,
                 "reason": f"응답 분석 실패: {str(e)}",
                 "law": "N/A",
                 "precedent": "N/A",
