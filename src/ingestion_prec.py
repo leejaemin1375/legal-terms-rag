@@ -47,7 +47,7 @@ def ingest_prec_data():
                 판시사항 = clean_html(item.get('content', {}).get('판시사항', ''))
                 판결요지 = clean_html(item.get('content', {}).get('판결요지', ''))
                 
-                # 💡 들여쓰기 공백이 본문에 섞이지 않도록 정렬 수정
+
                 page_content = (
                     f"사건명: {item.get('metadata', {}).get('사건명', '')}\n"
                     f"사건번호: {item.get('metadata', {}).get('사건번호', '')}\n"
@@ -102,7 +102,6 @@ def ingest_prec_data():
             if existing_data and 'ids' in existing_data:
                 existing_ids.update(existing_data['ids'])
         except Exception as e:
-            # 최초 적재 시 컬렉션이 비어있어 에러가 날 수 있으므로 예외 처리 후 통과
             break
 
     remaining_docs = []
@@ -146,7 +145,6 @@ def ingest_prec_data():
             ids=batch_ids
         )
 
-        # OpenAI/기타 임베딩 API 초당 호출 제한(Rate Limit)을 피하기 위한 슬립
         time.sleep(1.5)
 
     print(f"✨ 판례 데이터 임베딩 및 Chroma 벡터 DB 저장 완료! (이번 회차 총 {len(remaining_docs)}건 신규 저장)")

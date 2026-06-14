@@ -73,22 +73,20 @@ def ingest_legal_data():
                 if not article_num:
                     article_num = item.get('article_num', '')
 
-                # [요청 사항 반영] 
-                # 1. 본문 텍스트 구성 (법령명한글, 조문제목, 조문내용)
                 text = f"법령명한글: {law_name_ko}\n조문제목: {article_title}\n조문내용: {content}"
                 all_docs.append(text)
 
-                # 2. 메타데이터 구성 (법령ID, 조문번호, 소관부처, 시행일자)
+
                 metadata = {
                     "law_id": str(law_id) if law_id else "N/A",
                     "article_number": str(article_num) if article_num else "N/A",
                     "department": str(department) if department else "N/A",
                     "enforcement_date": str(enforcement_date) if enforcement_date else "N/A",
-                    "type": "law" # 기존 ingestion.py의 규칙 호환을 위해 추가
+                    "type": "law"
                 }
                 all_metadatas.append(metadata)
 
-                # 3. 고유 ID 생성 (파일별 구분 명시)
+
                 safe_file_name = os.path.splitext(file_name)[0]
                 all_ids.append(f"law_{safe_file_name}_{global_idx}")
                 global_idx += 1
