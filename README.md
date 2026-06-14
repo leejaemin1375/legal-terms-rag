@@ -1,6 +1,7 @@
-# LawCheck (Legal Toxin Finder) ⚖️
+# LawCheck (Legal Toxin Finder)
 
-법률 약관 RAG(Retrieval-Augmented Generation)를 이용한 계약서 및 약관 내 독소조항 판별 시스템입니다. Streamlit 기반의 웹 인터페이스를 통해 PDF나 이미지 형태의 계약서를 업로드하고, 내부 조항을 분리하여 공정거래법, 약관법 및 관련 판례를 바탕으로 위험 조항을 자동으로 진단합니다.
+법률 약관 RAG(Retrieval-Augmented Generation)를 이용한 계약서 및 약관 내 독소조항 판별 시스템입니다.
+Streamlit 기반의 웹 인터페이스를 통해 PDF나 이미지 형태의 계약서를 업로드하고, 내부 조항을 분리하여 공정거래법, 약관법 및 관련 판례를 바탕으로 위험 조항을 자동으로 진단합니다.
 
 ---
 
