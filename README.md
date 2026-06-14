@@ -25,15 +25,14 @@ legal-rag-project/
 ├── requirements.txt        # 프로젝트 실행을 위한 필수 라이브러리 목록
 ├── app_final.py            # Streamlit 기반 웹 GUI 애플리케이션 (진입점)
 └── .gitignore              # 가상환경, .env, DB 로컬 파일 등 Git 제외 설정
+```
 
-
-
-# .env 파일 예시
+## 2.env 파일 구조
 GOOGLE_API_KEY="YOUR_GOOGLE_GEMINI_API_KEY_HERE"
 
 
-# 필수 패키지 설치
+## 3.필수 패키지 설치
 pip install -r requirements.txt
 
-# 웹 애플리케이션 실행
+## 4.웹 애플리케이션 실행
 streamlit run app_final.py
